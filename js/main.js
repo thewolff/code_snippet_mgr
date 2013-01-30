@@ -50,6 +50,9 @@ require.config({
 			'codemirror'
 			],
 			exports: 'addoncollapse'
+		},
+		parse: {
+			exports: 'parse-1.2.0.min'
 		}
 	},
 	paths: {
@@ -68,12 +71,20 @@ require.config({
 });
 
 require([
-	'views/app',
-	'routers/router'
-], function( AppView, Workspace ) {
+	'views/app'
+], function( AppView) {
 	// Initialize routing and start Backbone.history()
-	new Workspace();
 	Backbone.history.start();
+	
+	Parse.initialize("bYPy4E9RrKFyg4IblH5pHlVFYsDXVGUnXuGEDjKv", "HgvQzzAWFsgEhGX9arIh8KZBQR8YIfuW9dQEsysM");
+
+	var TestObject = Parse.Object.extend("TestObject");
+	var testObject = new TestObject();
+	testObject.save({foo: "bar"}, {
+	  success: function(object) {
+	    console.log("yay! it worked");
+	  }
+	});
 
 	// Initialize the application view
 	new AppView();
