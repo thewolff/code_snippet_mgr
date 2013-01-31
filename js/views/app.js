@@ -2,10 +2,9 @@ define([
 	'jquery',
 	'underscore',
 	'backbone',
-	'collections/snippets',
-	'views/snippets',
-	'text!templates/stats.html'
-], function( $, _, Backbone, Todos, TodoView, statsTemplate, Common ) {
+	'codemirror',
+	'modejs'
+], function( $, _, Backbone, codemirror, modejs) {
 
 	var AppView = Backbone.View.extend({
 
@@ -13,8 +12,6 @@ define([
 		// the App already present in the HTML.
 		el: '#main',
 
-		// Compile our stats template
-		template: _.template( statsTemplate ),
 
 		// Delegated events for creating new items, and clearing completed ones.
 		events: {
@@ -30,9 +27,14 @@ define([
 
 		// Re-rendering the App just means refreshing the statistics -- the rest
 		// of the app doesn't change.
-		render: function() {
-			console.log('rendered')
-		}
+		render: function(){
+			console.log('rendered');
+			this.myCodeMirror = CodeMirror($('.main')[0], {
+			  mode:  'javascript',
+			  lineNumbers: true,
+			  theme: 'xq-dark'
+			});
+		},
 	});
 
 	return AppView;
