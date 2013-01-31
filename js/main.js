@@ -33,6 +33,7 @@ require.config({
 		},
 		modehtml: {
 			deps: [
+				'codemirror',
 				'modecss',
 				'modexml',
 				'modejs'
@@ -64,7 +65,7 @@ require.config({
 		modejs: 'lib/codemirror/mode/javascript/javascript',
 		modexml: 'lib/codemirror/mode/xml/xml',
 		modecss: 'lib/codemirror/mode/css/css',
-		modehtml: 'lib/codemirror/mode/htmlembedded/htmlembedded',
+		modehtml: 'lib/codemirror/mode/htmlmixed/htmlmixed',
 		addoncollapse: 'lib/codemirror/addon/collapserange',
 		addonfolding: 'lib/codemirror/addon/foldcode'
 	}

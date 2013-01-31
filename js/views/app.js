@@ -3,8 +3,9 @@ define([
 	'underscore',
 	'backbone',
 	'codemirror',
-	'modejs'
-], function( $, _, Backbone, codemirror, modejs) {
+	'modehtml'
+
+], function( $, _, Backbone, codemirror, modehtml) {
 
 	var AppView = Backbone.View.extend({
 
@@ -30,7 +31,7 @@ define([
 		render: function(){
 			console.log('rendered');
 			this.myCodeMirror = CodeMirror($('.main')[0], {
-			  mode:  'javascript',
+			  mode:  'htmlmixed',
 			  lineNumbers: true,
 			  theme: 'xq-dark'
 			});
