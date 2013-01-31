@@ -94,7 +94,20 @@ textarea {
    ========================================================================== */
 
 
+.wrapper {
+    width: 1140px;
+    margin:30px auto 0 auto;
+}
 
+.nav{
+    min-width:340px;
+    width:340px;
+    float: left;
+}
+.main{
+    width:800px;
+    float: left;
+}
 
 
 
