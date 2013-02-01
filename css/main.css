@@ -109,6 +109,10 @@ textarea {
     float: left;
 }
 
+.CodeMirror {
+    height: 600px;
+}
+
 
 
 

@@ -3,9 +3,10 @@ define([
 	'underscore',
 	'backbone',
 	'codemirror',
-	'modehtml'
+	'modehtml',
+	'collections/snippets'
 
-], function( $, _, Backbone, codemirror, modehtml) {
+], function( $, _, Backbone, codemirror, modehtml, Snippets) {
 
 	var AppView = Backbone.View.extend({
 

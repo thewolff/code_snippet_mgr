@@ -1,14 +1,16 @@
 define([
 	'underscore',
-	'backbone'
+	'backbone',
 ], function( _, Backbone ) {
 
-	var SnippetModel = Backbone.Model.extend({
+	var SnippetModel = Parse.Object.extend({
+		className: "/snippet",
+
 		// Default attributes for the todo
 		// and ensure that each todo created has `title` and `completed` keys.
 		defaults: {
-			title: '',
-			completed: false
+		  content: "",
+		  done: false
 		},
 
 		// Toggle the `completed` state of this todo item.
